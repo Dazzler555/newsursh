@@ -5,3 +5,5 @@ do
 umount /apex/${APEX} 2&>/dev/null
 rm -rf /apex/${APEX} 2&>/dev/null
 done
+
+return 0
