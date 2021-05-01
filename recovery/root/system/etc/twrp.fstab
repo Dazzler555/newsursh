@@ -4,9 +4,14 @@
 
 # mount point  fstype  device                             device2                flags
 
-/system_root 	ext4    /dev/block/mapper/system 	flags=display="System"
-/vendor		/dev/block/mapper/vendor			ext4		flags=display="Vendor"
-/product		/dev/block/mapper/product		ext4		flags=display="Product"
+/system_root 	ext4    /dev/block/mapper/system 				  flags=display="System"
+/vendor 	ext4    /dev/block/mapper/vendor 				  flags=display="Vendor"
+/product 	ext4    /dev/block/mapper/product 				  flags=display="Product"
+/system_image   emmc    /dev/block/mapper/system                                  flags=display="System Image";flashimg=1;backup=1
+/system_ext_img emmc    /dev/block/mapper/system_ext                              flags=display="System_ext Image";flashimg=1;backup=1
+/vendor_image   emmc    /dev/block/mapper/vendor                                  flags=display="Vendor Image";flashimg=1;backup=1
+/product_image  emmc    /dev/block/mapper/product                                 flags=display="Product Image";flashimg=1;backup=1
+
 /super_image   	emmc    /dev/block/bootdevice/by-name/super                       flags=backup=1;display="Super"
 /cache         	ext4    /dev/block/bootdevice/by-name/cache			  flags=display="Cache"
 /data          	f2fs    /dev/block/bootdevice/by-name/userdata                    flags=fileencryption=ice:aes-256-cts;wrappedkey
